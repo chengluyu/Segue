@@ -8,7 +8,8 @@ IEEE Transactions on Visualization and Computer Graphics ([IEEE VIS 2018](http:/
 
 ## Working Prototype
 
-There following is a working prototype of Segue. Chrome is recommended as the system was only tested with Chrome.  
+There following is a working prototype of Segue. Chrome is recommended as the system was only tested with Chrome.
+
 [https://segueegonetwork.github.io](https://segueegonetwork.github.io)
 
 ## System Demo
