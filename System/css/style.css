@@ -1,0 +1,208 @@
+body {
+	white-space: nowrap;
+	font-size: 0px;
+}
+
+#mds-view, #event-view, #table-view, #flow-view, #node-link-diagram {
+	font: 10px sans-serif;
+	position: relative;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+ 
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #d3d3d3;
+}
+
+div.noselection {
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.dummy {
+	height: 20px;
+}
+
+.ui-menu-bar {
+	position: relative;
+}
+
+.ui-menu-bar .svgButton {
+	fill: #D3D3D3;
+}
+
+.ui-menu-bar .svgButton.selected {
+	fill: black;
+}
+
+.ui-menu-bar span {
+	float: right;
+	line-height: 15px;
+}
+
+#timeseries-menu {
+	position: absolute;
+	top: 3px;
+	right: 60px;
+}
+
+#timeseries-menu label {
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+#timeseries-menu select {
+	width: 60px;
+}
+
+.ui-menu-bar .ui-button {
+	padding: 0px;
+	margin: 0px;
+}
+
+.ui-menu-bar .control .button {
+	fill: #D3D3D3;
+}
+
+.ui-menu-bar .control .button.selected {
+	fill: black;
+}
+
+.ui-view {
+	background: white;
+	border: 1px solid #aaaaaa;
+}
+
+#table-view, #flow-view, #event-view, #mds-view, #left-content, #right-content {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#table-view {
+	overflow: hidden;
+}
+
+#timeline-flow {
+	display: inline-block;
+}
+
+#flow-wrapper, #table-wrapper {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.row.even.highlighted .highlight,  .row.odd.highlighted .highlight {
+	fill: #FFFFEE;
+}
+
+.row.even.selected .highlight, .row.odd.selected .highlight {
+	fill: #FFFFEE;
+}
+
+.row.even .highlight {
+	fill: white;
+}
+
+.row.odd .highlight {
+	fill: #F7F7F7;
+}
+
+.brush .background {
+	fill: royalblue;
+	opacity: 0.2;
+}
+
+.brush .extent {
+	fill: black;
+	stroke: black;
+	fill-opacity: 0.125;
+	shape-rendering: crispEdges;
+}
+
+select, #remove, #hide-link, #adjust-time-series {
+	outline: none;
+}
+
+#hide-link.selected, #hide-link:active, #adjust-time-series.selected, #adjust-time-series:active {
+	background-color: #ffffcc;
+	border: 1px solid #cccccc;
+	color: #454545;
+}
+
+#adjust-time-series {
+	display: none;
+}
+
+.button rect {
+	fill: #e5e5e5;
+}
+
+.button.selected rect {
+	fill: #ffffcc;
+}
+
+#node-link-diagram {
+	position: absolute;
+	display: none;
+	width: 300px;
+	height: 300px;
+}
+
+#node-link-diagram svg {
+	width: 300px;
+	height: 300px;
+}
+
+#scatterplot .date rect, #flow-view .date rect {
+	fill: white;
+	stroke: none;
+}
+
+#scatterplot .date circle, #flow-view .date circle {
+	fill: white;
+	stroke: #d3d3d3;
+}
+
+#scatterplot .heatmap-btn.selected rect {
+	fill: #ffffcc;
+}
+
+#mds-view .scatterplot-container {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+#mds-view .distance-function-menu {
+	position: absolute;
+	right: 90px;
+	top: 3px;
+}
+
+#mds-view .distance-function-menu span {
+	font-weight: bold;
+}
+
+#mds-view #heatmap {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
