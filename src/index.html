@@ -1,133 +1,110 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<head>
-	<link rel="stylesheet" type="text/css" href="css/jquery-ui/jquery-ui.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/tooltip.css">
-	<link rel="stylesheet" type="text/css" href="css/d3-context-menu.css">
-	<link rel="stylesheet" type="text/css" href="fonts/Font-Awesome/css/font-awesome.min.css">
-
-	<script src="vender/d3.v3.min.js"></script>
-	<script src="vender/jquery-3.1.0.min.js"></script>
-	<script src="vender/jquery-ui.min.js"></script>
-	<script src="vender/numeric.min.js"></script>
-	<script src="vender/mds.js"></script>
-	<script src="vender/tsne.js"></script>
-	<script src="vender/d3-context-menu.js"></script>
-	<script src="vender/heatmap.min.js"></script>
-</head>
-
-<body>
-	<div id="left-content">
-
-		<div id="mds-view" class="noselection ui-view ui-corner-all">
-			<div id="heatmap"></div>
-			<div class="scatterplot-container"><svg id="scatterplot"></svg></div>
-			<div class="distance-function-menu">
-				<span>Distance Function: </span>
-				<select>
-					<option value="euclidean">Euclidean Distance</option>
-					<option value="edit">Edit Distance</option>
-				</select>
-			</div>
-		</div>
-
-	</div>
-
-	<div id="right-content">
-
-		<div id="upper-content">
-
-			<div id="flow-view" class="noselection ui-view ui-corner-all">
-
-				<div class="ui-menu-bar">
-
-					<svg class="control"></svg>
-
-					<span>
-						<button id="remove" class="ui-button">
-							<span class="ui-icon-close ui-icon"></span>
-						</button>
-					</span>
-
-					<span>
-						<button id="hide-link" class="ui-button">
-							<span class="ui-icon-minus ui-icon"></span>
-						</button>
-					</span>
-					
-					<span>
-						<button id="adjust-time-series" class="ui-button">
-							<span class="ui-icon-arrow-2-n-s ui-icon"></span>
-						</button>
-					</span>
-
-					<form id="timeseries-menu">
-						<label for="timeseries-menu">Time Series:</label>
-						<select name="timeseries-menu"></select>
-					</form>
-
-				</div>
-
-				<div id="timeline-flow">
-
-					<div id="timeline-wrapper">
-						<svg id="timeline"></svg>
-					</div>
-
-					<div id="flow-wrapper">
-						<svg id="chart"></svg>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div id="lower-content">
-
-			<div id="event-view" class="ui-view ui-corner-all noselection">
-				<svg id="event-editor"></svg>
-			</div>
-
-			<div id="table-view" class="ui-view ui-corner-all noselection">
-				<div id="table-legend-wrapper">
-					<svg id="table-legend"></svg>
-				</div>
-
-				<div id="table-wrapper">
-					<svg id="table"></svg>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
-
-	<div id="node-link-diagram" class="ui-view ui-corner-all noselection">
-		<svg></svg>
-	</div>
-
-	<div id="tooltip"></div>
-
-	<script src="js/start.js"></script>
-	<script src="js/database.js"></script>
-	<script src="js/table.js"></script>
-	<script src="js/egoNetworkView.js"></script>
-	<script src="js/flowVis.js"></script>
-	<script src="js/timeline.js"></script>
-	<script src="js/eventView.js"></script>
-	<script src="js/timeSeriesAreaCharts.js"></script>
-	<script src="js/eventViewRightClickHandler.js"></script>
-	<script src="js/rangePointEventEditor.js"></script>
-	<script src="js/intervalEventEditor.js"></script>
-	<script src="js/appearPointEventEditor.js"></script>
-	<script src="js/comparisonHandler.js"></script>
-	<script src="js/mdsView.js"></script>
-	<script src="js/eventTag.js"></script>
-	<script src="js/combineEventEditor.js"></script>
-	<script src="js/nodeLinkDiagram.js"></script>
-	<script src="js/stateHandler.js"></script>
-	<script src="js/heatmap.js"></script>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/tooltip.css" />
+    <link rel="stylesheet" type="text/css" href="css/d3-context-menu.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/Font-Awesome/css/font-awesome.min.css"
+    />
+    <script src="vender/d3.v3.min.js"></script>
+    <script src="vender/jquery-3.1.0.min.js"></script>
+    <script src="vender/jquery-ui.min.js"></script>
+    <script src="vender/numeric.min.js"></script>
+    <script src="vender/mds.js"></script>
+    <script src="vender/tsne.js"></script>
+    <script src="vender/d3-context-menu.js"></script>
+    <script src="vender/heatmap.min.js"></script>
+  </head>
+  <body>
+    <div id="left-content">
+      <div id="mds-view" class="noselection ui-view ui-corner-all">
+        <div id="heatmap"></div>
+        <div class="scatterplot-container"><svg id="scatterplot"></svg></div>
+        <div class="distance-function-menu">
+          <span>Distance Function: </span>
+          <select>
+            <option value="euclidean">Euclidean Distance</option>
+            <option value="edit">Edit Distance</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div id="right-content">
+      <div id="upper-content">
+        <div id="flow-view" class="noselection ui-view ui-corner-all">
+          <div class="ui-menu-bar">
+            <svg class="control"></svg>
+            <span>
+              <button id="remove" class="ui-button">
+                <span class="ui-icon-close ui-icon"></span>
+              </button>
+            </span>
+            <span>
+              <button id="hide-link" class="ui-button">
+                <span class="ui-icon-minus ui-icon"></span>
+              </button>
+            </span>
+            <span>
+              <button id="adjust-time-series" class="ui-button">
+                <span class="ui-icon-arrow-2-n-s ui-icon"></span>
+              </button>
+            </span>
+            <form id="timeseries-menu">
+              <label for="timeseries-menu">Time Series:</label>
+              <select name="timeseries-menu"></select>
+            </form>
+          </div>
+          <div id="timeline-flow">
+            <div id="timeline-wrapper">
+              <svg id="timeline"></svg>
+            </div>
+            <div id="flow-wrapper">
+              <svg id="chart"></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="lower-content">
+        <div id="event-view" class="ui-view ui-corner-all noselection">
+          <svg id="event-editor"></svg>
+        </div>
+        <div id="table-view" class="ui-view ui-corner-all noselection">
+          <div id="table-legend-wrapper">
+            <svg id="table-legend"></svg>
+          </div>
+          <div id="table-wrapper">
+            <svg id="table"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="node-link-diagram" class="ui-view ui-corner-all noselection">
+      <svg></svg>
+    </div>
+    <div id="tooltip"></div>
+    <script src="js/start.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/egoNetworkView.js"></script>
+    <script src="js/flowVis.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/eventView.js"></script>
+    <script src="js/timeSeriesAreaCharts.js"></script>
+    <script src="js/eventViewRightClickHandler.js"></script>
+    <script src="js/rangePointEventEditor.js"></script>
+    <script src="js/intervalEventEditor.js"></script>
+    <script src="js/appearPointEventEditor.js"></script>
+    <script src="js/comparisonHandler.js"></script>
+    <script src="js/mdsView.js"></script>
+    <script src="js/eventTag.js"></script>
+    <script src="js/combineEventEditor.js"></script>
+    <script src="js/nodeLinkDiagram.js"></script>
+    <script src="js/stateHandler.js"></script>
+    <script src="js/heatmap.js"></script>
+  </body>
+</html>
